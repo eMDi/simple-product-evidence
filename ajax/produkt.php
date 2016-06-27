@@ -7,15 +7,15 @@ function ocisti($retazec) {
 
 if( isset($_POST['product_action']) && $_POST['product_action'] == 'add') {
   $chyba = 0;
-  $zapis = $db->query("INSERT INTO produkty (nazov,popis,cena) VALUES( '".ocisti($_POST['produkt_name'])."' , '".ocisti($_POST['produkt_desc'])."' , '".floatval($_POST['produkt_price'])."' )");
+  $zapis = $db->query("INSERT INTO produkty (nazov,popis,cena) VALUES( '".ocisti($_POST['product_name'])."' , '".ocisti($_POST['product_desc'])."' , '".str_replace(',', '.', $_POST['product_price'])."' )");
   if($zapis) {
-    $archiv = $db->query("INSERT INTO ceny (produkt_id,cena) VALUES( '".$zapis->insert_id"' , '".floatval($_POST['produkt_price'])."' )");
+    $archiv = $db->query("INSERT INTO ceny (produkt_id,cena) VALUES( '".$zapis->insert_id."' , '".str_replace(',', '.', $_POST['product_price'])."' )");
     if(!$archiv) {
       $chyba++;
     }
   } else {
     $chyba++;
   }
-  echo "Pocet chyb: " . $chyb;
+  echo "Pocet chyb: " . $chyba;
 }
  ?>

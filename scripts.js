@@ -3,10 +3,10 @@ $(document).ready(
         $("#add_product_show_form").click(function () {
             $("#new_product").toggle();
         });
-        $( "#new_product" ).submit(function( event ) {
+        $( "#add_product" ).submit(function( event ) {
           event.preventDefault();
-
-          var posting = $.post( "ajax/produkt.php", $( "#new_product" ).serialize() );
+          console.log('Ideme vkladat do DB.');
+          var posting = $.post( "ajax/produkt.php", $( "#add_product" ).serialize() );
 
           posting.done(function( data ) {
             console.log(data);
