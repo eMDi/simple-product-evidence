@@ -42,11 +42,11 @@ require_once("./config.php");
           $select = $db->query("SELECT * FROM produkty ORDER BY nazov ASC");
           if($select) {
             while($data=mysqli_fetch_assoc($select)) {
-              echo "<div class=\"produkt\">
-                      <span class=\"nazov\"></span>
-                      <span class=\"popis\"></span>
-                      <span class=\"cena\"></span>
-                      <span class=\"akcie\"></span>
+              echo "<div class=\"produkt\" id=\"produkt_$data[id]\">
+                      <span class=\"nazov\">$data[nazov]</span>
+                      <span class=\"popis\">$data[popis]</span>
+                      <span class=\"cena\">$data[cena]</span>
+                      <span class=\"akcie\"><a class=\"edit\" href=\"\">edit</a></span>
                     </div>";
             }
         }
