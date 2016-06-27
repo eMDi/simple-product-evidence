@@ -28,10 +28,10 @@ require_once("./config.php");
     <div id="content">
       <div id="new_product">
         <form name="product" method="post">
-          <label for="product_name">Nazov produktu</label><input type="text" name="product_name" placeholder="Nazov produktu" maxlength="255">
-          <label for="product_desc">Popis produktu</label><textarea name="product_desc" placeholder="Popis produktu">
-          <label for="product_price">Cena produktu</label><input type="text" name="product_price" placeholder="0,00" maxlength="10">
-          <input type="submit" name="add_product" value="Pridať produkt">
+          <div><label for="product_name">Nazov produktu</label><input type="text" name="product_name" placeholder="Nazov produktu" maxlength="255"></div>
+          <div><label for="product_desc">Popis produktu</label><textarea name="product_desc" placeholder="Popis produktu"></textarea></div>
+          <div><label for="product_price">Cena produktu</label><input type="text" name="product_price" placeholder="0,00" maxlength="10"></div>
+          <div><input type="submit" name="add_product" value="Pridať produkt"></div>
         </form>
       </div>
       <div id="product_list">
